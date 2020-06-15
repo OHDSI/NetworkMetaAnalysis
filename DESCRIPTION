@@ -1,0 +1,41 @@
+Package: NetworkMetaAnalysis
+Title: Network meta analysis of target-comparator-outcomes in OHDSI network studies
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Benjamin Skov", family = "Kaas-Hansen", role = c("aut", "cre"),
+           email = "benskov@gmail.com", comment = c(ORCID = "0000-0003-1023-0371", 
+           github = "github.com/benskov"))
+Description: What the package does (one paragraph).
+Depends:
+	R (>= 3.5.0)
+Imports:
+	coda (>= 0.19.3),
+	DatabaseConnector (>= 2.4.4),
+	dplyr (>= 0.8.5),
+	gemtc (>= 0.8.4),
+	ggraph (>= 2.0.2),
+	ggplot2 (>= 3.3.0),
+	grid (>= 3.6.3),
+	igraph (>= 1.2.5),
+	magrittr (>= 1.5),
+	rlang (>= 0.4.6),
+	SqlRender (>= 1.6.5),
+	stringr (>= 1.4),
+	tibble (>= 3.0.1),
+	tidyr (>= 1.0.2),
+	tidyselect (>= 1.0.0)
+Suggests:
+	doSNOW (>= 1.0.18),
+	DT (>= 0.13),
+	forcats (>= 0.5.0),
+	foreach (>= 1.5.0),
+	shiny (>= 1.4.0.2),
+	shinydashboard (>= 0.7.1),
+	shinythemes (>= 1.1.2),
+	snow (>= 0.4.3),
+	testthat
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0

@@ -1,0 +1,4 @@
+^NetworkMetaAnalysis\.Rproj$
+^\.Rproj\.user$
+generateSysdataFile.R
+internal/
