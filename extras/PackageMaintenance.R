@@ -16,3 +16,23 @@
 
 # Format and check code:
 devtools::spell_check()
+
+# Create PDF manual (for now, no vignettes)
+if (.Platform$OS.type == "unix") {
+	system("rm extras/NetworkMetaAnalysis.pdf")
+	system("R CMD Rd2pdf ./ --output=extras/NetworkMetaAnalysis.pdf")
+} else {
+	unlink("extras/NetworkMetaAnalysis.pdf")
+	shell("R CMD Rd2pdf ./ --output=extras/NetworkMetaAnalysis.pdf")
+}
+
+# When there will be vignettes, this will be the "pipeline" to create one:
+
+# rmarkdown::render("vignettes/GettingStarted.Rmd",
+# 				  output_file = "../inst/doc/GettingStarted.pdf",
+# 				  rmarkdown::pdf_document(latex_engine = "pdflatex",
+# 				  						  toc = TRUE,
+# 				  						  number_sections = TRUE))
+# unlink("inst/doc/GettingStarted.tex")
+
+pkgdown::build_site()
