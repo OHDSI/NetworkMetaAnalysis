@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 generateSysdataFile.R
 internal/
+^README\.Rmd$

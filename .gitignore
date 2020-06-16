@@ -3,5 +3,6 @@
 .Rhistory
 .RData
 .Ruserdata
+.DS_Store
 internal/
 errorReport.txt
