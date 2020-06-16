@@ -6,7 +6,7 @@
 \usage{
 fetchParameterSummaries(
   parameterSummaries,
-  devianceStatitics,
+  devianceStatistics,
   networkMetaAnalysisId = NULL,
   nDigits = 1
 )
@@ -14,13 +14,13 @@ fetchParameterSummaries(
 \arguments{
 \item{parameterSummaries}{output of \code{deriveParameterQuantiles}.}
 
+\item{devianceStatistics}{output of \code{fetchDevianceStatistics}.}
+
 \item{networkMetaAnalysisId}{scalar, what analysis to use. If \code{NULL} (default), the function
 assumes pre-filtered data to be supplied in the first two arguments.}
 
 \item{nDigits}{scalar, how many digits to show for parameter estimates. Won't affect deviance
 statistics.}
-
-\item{devianceStatistics}{output of \code{fetchDevianceStatistics}.}
 }
 \description{
 Table of parameter estimates and deviance statistics for reconciled results

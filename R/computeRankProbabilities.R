@@ -2,6 +2,7 @@
 #' 
 #' To be used for, i.a., rankograms (that use the cumulative probability).
 #' 
+#' @param fit object returned from GeMTC.
 #' @inheritParams runAnalyses
 #' 
 #' @return Tidy data frame.

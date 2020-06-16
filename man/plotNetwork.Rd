@@ -12,10 +12,14 @@ plotNetwork(
   labelOrientation = "radial",
   labelColour = "black",
   edgeColour = "dodgerblue",
-  edgeAlpha = 0.2
+  edgeAlpha = 0.2,
+  treatmentMetaData = NULL,
+  edgeMetaData = NULL
 )
 }
 \arguments{
+\item{edges, nodes}{data frames with data on edges and nodes in the study graph.}
+
 \item{maxNodeRadius}{the radius of the largest node in the network on the original
 coordinate scales (= [-1, [1). Default = 0.1.}
 
@@ -32,7 +36,7 @@ opague, 0 = completely transparent.}
 network, e.g., name and databases with data for this treatment.}
 
 \item{edgeMetaData}{NOT IN USE a \code{dataframe} with information about the head-to-head
-comparisons. Not that the number of head-to-head comparisons is computed so doesn't need to be
+comparisons. Note that the number of head-to-head comparisons is computed so doesn't need to be
 supplied.}
 }
 \description{

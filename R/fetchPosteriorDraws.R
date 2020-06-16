@@ -3,7 +3,7 @@
 #' Potentially, with some thinning to keep the amount of space required down.
 #'
 #' @param fit the result of \code{fitNetwork}.
-#' @param thin scalar, thinning factor. The default value (\code{10}) keeps every tenth observation.
+#' @param drawsThin scalar, thinning factor. The default value (\code{10}) keeps every tenth observation.
 #'   This is mainly used when producing output to be saved to the server, to keep the storage
 #'   requirements at a reasonable level.
 #'

@@ -21,7 +21,7 @@ computeRhat <- function(fit) {
 		coda::gelman.diag(autoburnin = FALSE, multivariate = FALSE) %>%
 		with(psrf) %>%
 		tibble::as_tibble(rownames = "parameter") %>%
-		setNames(c("parameterName", "rhatValue", "rhatUpperCI")) %>%
+		stats::setNames(c("parameterName", "rhatValue", "rhatUpperCI")) %>%
 		dplyr::mutate(modelName = deriveModelName(fit)) %>%
 		dplyr::select(modelName, everything())
 }

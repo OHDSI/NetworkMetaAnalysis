@@ -4,7 +4,6 @@
 #' node-splitting analysis is supplied, the output is a list of plots, one for each analysis and one
 #' for the consistency fit.
 #'
-#' @param modelFit an object containing the fitted results.
 #' @param densityResolution scalar, the number of grid points over which to estimate the densities.
 #'   Higher values yield smoother curves but produces a larger object.
 #' @inheritParams plotTraces

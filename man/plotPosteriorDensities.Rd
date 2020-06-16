@@ -14,6 +14,10 @@ plotPosteriorDensities(
 )
 }
 \arguments{
+\item{posteriorDraws}{tidy data frame, all posterior draws with (at least) the following columns:
+\code{modelName}, \code{chainId}, \code{mcmcIterationId}, \code{parameterName},
+\code{parameterValue}.}
+
 \item{separateChains}{boolean, should chains be plotted as separate distributions (\code{TRUE},
 default) or as one (\code{FALSE})? Not plotting chains separately somewhat defeats the purpose
 of the visualisation but is anyway left to the user.}
@@ -26,7 +30,10 @@ masking overlain lines, so the default is \code{0.7}.}
 \item{densityResolution}{scalar, the number of grid points over which to estimate the densities.
 Higher values yield smoother curves but produces a larger object.}
 
-\item{modelFit}{an object containing the fitted results.}
+\item{wrapByModelName}{boolean, if the \code{modelName} column contains more than one distinct
+value, this should be set to \code{TRUE} to show separate plots for each model. Otherwise, the
+plot will combine samples for the same parameter from different models, which will give
+misleading results.}
 }
 \value{
 A ggplot object, or a list of ggplot objects.

@@ -12,6 +12,8 @@ live on a server.}
 
 \item{rstudio}{boolean, should the app run in the Viewer window (\code{TRUE}, default) or in an
 internet browser (\code{FALSE})?}
+
+\item{...}{passed on to \code{shiny::runApp}}
 }
 \description{
 Launch a Shiny app to explore the results

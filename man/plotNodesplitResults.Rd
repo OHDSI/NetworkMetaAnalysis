@@ -6,6 +6,9 @@
 \usage{
 plotNodesplitResults(nodesplitResults)
 }
+\arguments{
+\item{nodesplitResults}{tidy data frame with consistency, direct and indirect HR estimates with CrIs.}
+}
 \description{
-Pending, but will be useful for getting an overview.
+Pending, but could be useful for getting an overview.
 }

@@ -1,10 +1,13 @@
 #' Run a single Network Meta Analysis
 #'
 #' Workhorse of the analysis pipeline. This is an internal function invoked either for sequential
-#' (\code{nCores = 1}) or parallel processing (\code{nCores > 1}). Probably shouldn't be called by
-#' the user.
+#' (\code{nCores = 1}) or parallel processing (\code{nCores > 1}). User should use either of those
+#' two wrappers, and not invoke this function directly.
 #'
+#' @param nmaId numeric, network meta-analysis ID.
 #' @inheritParams runAnalyses
+#'
+#' @noRd
 
 runSingleNetworkMetaAnalysis <- function(nmaId, aggregatedResults, includeNodesplittingAnalysis = FALSE, 
 										 nWarmup = 1000, nIter = 3000, nChains = 4, fitThin = 1, 

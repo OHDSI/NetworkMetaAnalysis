@@ -32,6 +32,8 @@ white, otherwise they will be black}
 the point estimate (usually median) and lower and upper bounds of the credibility intervals
 (usually 2.5 and 97.5 percentiles)}
 
+\item{textSize}{scalar.}
+
 \item{sucraEstimates}{data frame with two columns: exposureId and SUCRA estimate as numeric
 value. Output from \code{computeSucra}. Default: \code{NULL}. If valid data supplied, the SUCRA
 estimates will be shown in the diagonal, and the exposures will be ordered by descending SUCRA

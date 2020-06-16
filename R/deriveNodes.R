@@ -1,5 +1,6 @@
 #' Deriving node data for drawing the network
 #' 
+#' @param networkData tidy data frame, subset of the full data frame with aggregate results at study arm level for specific network meta-analysis.
 #' @inheritParams plotNetwork
 #' 
 #' @return A tidy data frame.

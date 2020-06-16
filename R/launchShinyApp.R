@@ -4,6 +4,7 @@
 #'   live on a server.
 #' @param rstudio boolean, should the app run in the Viewer window (\code{TRUE}, default) or in an
 #'   internet browser (\code{FALSE})?
+#' @param ... passed on to \code{shiny::runApp}
 #'
 #' @export
 

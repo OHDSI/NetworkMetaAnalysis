@@ -9,7 +9,7 @@ fetchPosteriorDraws(fit, drawsThin = 10)
 \arguments{
 \item{fit}{the result of \code{fitNetwork}.}
 
-\item{thin}{scalar, thinning factor. The default value (\code{10}) keeps every tenth observation.
+\item{drawsThin}{scalar, thinning factor. The default value (\code{10}) keeps every tenth observation.
 This is mainly used when producing output to be saved to the server, to keep the storage
 requirements at a reasonable level.}
 }

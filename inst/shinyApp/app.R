@@ -2,8 +2,8 @@
 # For devel only: assign(".RESULTS", loadFromDb(conn, resultsCdm), NetworkMetaAnalysis:::.nmaEnv)
 # PREAMP END
 
-for (p in c("shiny", "shinydashboard", "shinythemes", "magrittr", "DT", "ggplot2", "dplyr", "tidyr", "forcats")) {
-	capture.output(library(p, character.only = TRUE)) # load silently
+for (p in c("shiny", "shinydashboard", "shinythemes", "magrittr", "DT", "ggplot2", "dplyr", "tidyr")) {
+	utils::capture.output(library(p, character.only = TRUE)) # load silently
 }
 
 .RESULTS <- get(".RESULTS", envir = NetworkMetaAnalysis:::.nmaEnv)

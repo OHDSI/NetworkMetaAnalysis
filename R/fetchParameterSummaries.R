@@ -9,9 +9,9 @@
 #'   
 #' @export
 
-fetchParameterSummaries <- function(parameterSummaries, devianceStatitics, networkMetaAnalysisId = NULL, 
+fetchParameterSummaries <- function(parameterSummaries, devianceStatistics, networkMetaAnalysisId = NULL, 
 									nDigits = 1) {
-	for (x in c("parameterSummaries", "devianceStatitics")) {
+	for (x in c("parameterSummaries", "devianceStatistics")) {
 		if (!is.null(networkMetaAnalysisId)) {
 			assign(x, dplyr::filter(get(x), networkMetaAnalysisId == !!networkMetaAnalysisId))
 		}
@@ -26,7 +26,7 @@ fetchParameterSummaries <- function(parameterSummaries, devianceStatitics, netwo
 						"meanSumOfResidualDeviance" = "Dbar",
 						"sumOfLeverage" = "pD")
 	
-	devianceStats <- devianceStatitics %>%
+	devianceStats <- devianceStatistics %>%
 		tidyr::pivot_longer(-modelName, names_to = "parameterName", values_to = "estimate") %>%
 		dplyr::mutate(parameterName = devianceLookup[parameterName],
 					  estimate = sprintf("%.2f", estimate))

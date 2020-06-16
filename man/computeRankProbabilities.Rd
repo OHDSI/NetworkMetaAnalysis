@@ -7,6 +7,8 @@
 computeRankProbabilities(fit, preferredDirection = 1)
 }
 \arguments{
+\item{fit}{object returned from GeMTC.}
+
 \item{preferredDirection}{scalar, preferential direction of the outcome. \code{1} means higher
 values are preferred, \code{-1} means lower values are preferred.}
 }

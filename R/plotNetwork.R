@@ -3,11 +3,7 @@
 #' Draw the head-to-head comparisons as a network. The function relies on \pkg{ggraph} to do the
 #' heavy lifting.
 #'
-#' @param treatmentMetaData NOT IN USE a \code{dataframe} with information about each node in the
-#'   network, e.g., name and databases with data for this treatment.
-#' @param edgeMetaData NOT IN USE a \code{dataframe} with information about the head-to-head
-#'   comparisons. Not that the number of head-to-head comparisons is computed so doesn't need to be
-#'   supplied.
+#' @param edges,nodes data frames with data on edges and nodes in the study graph. 
 #' @param maxNodeRadius the radius of the largest node in the network on the original
 #'   coordinate scales (= \[-1, \[1). Default = 0.1.
 #' @param labelOrientation string giving how to rotate the label. There are two allowed settings:
@@ -16,7 +12,11 @@
 #'   text.
 #' @param edgeAlpha scalar in \[0, 1\] giving the opacity of the edges (default: 0.2). 1 = complete
 #'   opague, 0 = completely transparent.
-#' @inheritParams fitNetwork
+#' @param treatmentMetaData NOT IN USE a \code{dataframe} with information about each node in the
+#'   network, e.g., name and databases with data for this treatment.
+#' @param edgeMetaData NOT IN USE a \code{dataframe} with information about the head-to-head
+#'   comparisons. Note that the number of head-to-head comparisons is computed so doesn't need to be
+#'   supplied.
 #'
 #' @importFrom dplyr select left_join rename_all mutate group_by distinct n_distinct everything
 #'   summarise transmute
@@ -28,7 +28,8 @@
 
 plotNetwork <- function(edges, nodes, maxNodeRadius = 0.1, nodeColour = "dodgerblue",
 						labelOrientation = "radial", labelColour = "black",
-						edgeColour = "dodgerblue", edgeAlpha = 0.2) {
+						edgeColour = "dodgerblue", edgeAlpha = 0.2, treatmentMetaData = NULL,
+						edgeMetaData = NULL) {
 	
 	# FIX: maxNodeRadius based on number of nodes
 	# FIX: Expansion of plot area must be handled better

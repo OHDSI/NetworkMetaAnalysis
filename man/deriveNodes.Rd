@@ -7,6 +7,8 @@
 deriveNodes(networkData, labelOrientation)
 }
 \arguments{
+\item{networkData}{tidy data frame, subset of the full data frame with aggregate results at study arm level for specific network meta-analysis.}
+
 \item{labelOrientation}{string giving how to rotate the label. There are two allowed settings:
 \code{"radial"} (default) and \code{"horisontal"}/\code{"horizontal"}.}
 }

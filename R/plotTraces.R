@@ -4,13 +4,19 @@
 #' node-splitting analysis is supplied, the output is a list of plots, one for each analysis and one
 #' for the consistency fit.
 #'
-#' @param modelFit an object containing the fitted results.
+#' @param posteriorDraws tidy data frame, all posterior draws with (at least) the following columns:
+#'   \code{modelName}, \code{chainId}, \code{mcmcIterationId}, \code{parameterName},
+#'   \code{parameterValue}.
 #' @param separateChains boolean, should chains be plotted as separate distributions (\code{TRUE},
 #'   default) or as one (\code{FALSE})? Not plotting chains separately somewhat defeats the purpose
 #'   of the visualisation but is anyway left to the user.
 #' @param lineAlpha the opacity of drawn lines. If \code{alpha = 1}, lines will be entirely opague
 #'   masking overlain lines, so the default is \code{0.7}.
 #' @param lineSize scalar, thickness of the plot lines.
+#' @param wrapByModelName boolean, if the \code{modelName} column contains more than one distinct
+#'   value, this should be set to \code{TRUE} to show separate plots for each model. Otherwise, the
+#'   plot will combine samples for the same parameter from different models, which will give
+#'   misleading results.
 #'
 #' @return A ggplot object, or a list of ggplot objects.
 #'

@@ -15,6 +15,7 @@
 #'   value. Output from \code{computeSucra}. Default: \code{NULL}. If valid data supplied, the SUCRA
 #'   estimates will be shown in the diagonal, and the exposures will be ordered by descending SUCRA
 #'   estimate.
+#' @param textSize scalar.
 #'
 #' @importFrom rlang sym !!
 #'
