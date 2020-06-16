@@ -8,7 +8,7 @@
 #'   \code{analysisId}.
 #' @inheritParams runAnalyses
 #'
-#' @export
+#' @noRd
 
 fitNetwork <- function(networkData, includeNodesplittingAnalysis = FALSE, modelType = "random",
 					   nWarmup = 1000, nIter = 3000, fitThin = 1, nChains = 4) {

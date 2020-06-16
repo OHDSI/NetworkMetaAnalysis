@@ -5,7 +5,7 @@
 #' 
 #' @return A tidy data frame.
 #' 
-#' @export
+#' @noRd
 
 deriveNodes <- function(networkData, labelOrientation) {
 	# FIX: node names should come from CDM.[single]/[combi]_exposure_of_interest.exposure_name

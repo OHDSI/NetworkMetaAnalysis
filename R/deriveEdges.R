@@ -1,11 +1,11 @@
-#' Use to prepare data needed to draw the edges of the network
+#' Used to prepare data needed to draw the edges of the network
 #' 
 #' @param networkData subset of the original network study data.
 #' @param nodes output from \code{deriveNodes}
 #' 
 #' @return A ggplot object.
 #' 
-#' @export
+#' @noRd
 
 deriveEdges <- function(networkData, nodes) {
 	dplyr::select(networkData, studyId, cohortType, treatment, databaseId) %>%
