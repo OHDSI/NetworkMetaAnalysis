@@ -22,8 +22,6 @@ runSingleNetworkMetaAnalysis <- function(nmaId, aggregatedResults, includeNodesp
 	
 	o$graphNodes <- deriveNodes(networkData, labelOrientation = labelOrientation)
 	o$graphEdges <- deriveEdges(networkData, nodes = o$graphNodes)
-		# Test that data can be used for downstream functions
-		# plotNetwork(graph_edges, graph_nodes) 
 	
 	## Fit network
 	networkFit <- fitNetwork(networkData, includeNodesplittingAnalysis = includeNodesplittingAnalysis, 
@@ -34,20 +32,11 @@ runSingleNetworkMetaAnalysis <- function(nmaId, aggregatedResults, includeNodesp
 	o$modelParameterSummaries <- deriveParameterQuantiles(networkFit)
 	
 	o$pairwiseEstimates <- computePairwiseEstimates(networkFit)
-		# Test that data can be used for downstream functions
-		# plotForest(relativeEffects, reference = referenceTreatmentId) 	
-		
 	
 	o$rankProbabilities <- computeRankProbabilities(networkFit, preferredDirection = preferredDirection)
-		# Test that data can be used for downstream functions
-		# computeSucra(rankProbabilities)
-		# plotRankogram(rankProbabilities)
 	
 	## Diagnostics
 	o$posteriorSamples <- fetchPosteriorDraws(networkFit, drawsThin = drawsThin)
-		# Test that data can be used for downstream functions
-		# plotPosteriorDensities(posteriorDraws)
-		# plotTraces(posteriorDraws)
 	
 	if (isTRUE(includeNodesplittingAnalysis)) { 
 		o$nodesplitResults <- fetchTidyNodesplitResults(networkFit)
@@ -57,8 +46,6 @@ runSingleNetworkMetaAnalysis <- function(nmaId, aggregatedResults, includeNodesp
 	}
 	
 	o$potentialScaleReductionFactor <- computeRhat(networkFit)
-		# Test that data can be used for downstream functions
-		# plotRhat(rhatValues)
 	
 	o$networkMetaAnalysisDetails <- networkData %>%
 		dplyr::distinct(networkMetaAnalysisId, outcomeId, analysisId) %>%
