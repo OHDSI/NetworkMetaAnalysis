@@ -28,8 +28,11 @@ A package for using a collection of target-comparator-outcome estimates from OHD
 - Interactive Shiny app for simple exploration of results and model diagnostics
 - Supports parallel processing
 - Bayesian parameter estimation: allows for generating and comparing derived quantities from posterior samples
+- Supports checking network consistency with node-splitting analysis (compare overall network estimates with diret and indirect estimates)
 
 ## Screenshots
+
+#### Pair-wise HRs
 
 Example of heatmap with hazard ratios (HRs) between all six exposures in a demo analysis, with SUCRA values in the diagonal. HRs > 1 favour exposures on the horisontal axis, HRs < 1 those on the vertial axis. SUCRA stands for surface under the cumulative ranking and is the probability that the exposure is most effective.
 
@@ -42,6 +45,12 @@ NetworkMetaAnalysis::plotPairwiseEstimates(
 	sucraEstimates = NetworkMetaAnalysis::computeSucra(filter(results$rankProbabilities, networkMetaAnalysisId == 1))) +
 	labs(x = "Target exposure id", y = "Comparator exposure id")
 ```
+
+#### Interactive app
+
+The Shiny app has a classic dashboard-like structure with a menu on the left and large main panel showing appropriate content, here the graph of the six included studies. Node sizes represent the average incident of the outcome of interest in that cohort, line thickness the number of studies with direct comparisons of the two exposures connected by the lines. This graph plot is the result of `plotNetwork()`. 
+
+![](extras/screenshotShinyApp.png)
 
 ## Installation
 
