@@ -5,7 +5,7 @@
 #' 
 #' @export
 
-loadFromDb <- function(conn, schema) {
+loadFromDatabase <- function(conn, schema) {
 	fetchTable <- function(tableName, conn, schema) {
 		tableName <- SqlRender::camelCaseToSnakeCase(tableName)
 		tableExists <- DatabaseConnector::dbExistsTable(conn, name = tableName, schema = schema)
