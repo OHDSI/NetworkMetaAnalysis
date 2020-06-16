@@ -35,5 +35,6 @@ packageTheme <- ggplot2::theme_minimal() +
 			"t1", "t2", "target", "targetDays", "targetId", "targetOutcomes", "treatment",
 			"treatmentComparator", "treatmentTarget", "value", "x", "y", "ymax", "ymin"
 		)) # see: https://stackoverflow.com/questions/9439256/how-can-i-handle-r-cmd-check-no-visible-binding-for-global-variable-notes-when
+		# but see also https://www.r-bloggers.com/no-visible-binding-for-global-variable/ for alternative approaches
 	}
 }
