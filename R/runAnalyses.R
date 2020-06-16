@@ -36,7 +36,7 @@ runAnalyses <- function(aggregatedResults, includeNodesplittingAnalysis = FALSE,
 	for (userArgName in names(userArgs)) {
 		args[[userArgName]] <- userArgs[[userArgName]] # replace default
 	}
-	args$nmaIds <- nmaIds %||% unique(aggregatedResults$networkMetaAnalysisId)[1:2]
+	args$nmaIds <- nmaIds %||% unique(aggregatedResults$networkMetaAnalysisId)
 	args$referenceTreatmentId <- args$referenceTreatmentId %||% paste(sort(aggregatedResults$treatment)[1])
 	
 	# Invoke appropriate function
