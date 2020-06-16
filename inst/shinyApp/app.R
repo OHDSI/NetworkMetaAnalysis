@@ -29,13 +29,13 @@ sideBar <- dashboardSidebar(
 		uiOutput("analysisIdSelector"), # adapts to current outcomeId
 		menuItem("Graph of studies", tabName = "graphPlot", icon = icon("project-diagram")),
 		menuItem("Forest plot", tabName = "forestPlot", icon = icon("align-center")),
-		menuItem("Pairwise estimates", tabName = "pairwiseEstimates", icon = icon("th")),
+		menuItem("Pairwise estimates", tabName = "pairwiseEstimates", icon = icon("th"), selected = TRUE),
 		menuItem("Rankogram", tabName = "rankogram", icon = icon("chart-area")),
 		if (isTRUE(hasNodesplitResults)) menuItem("Node-splitting results", tabName = "nodesplitResults", icon = icon("code-branch")),
 		menuItem("Parameter summaries", tabName = "modelParameterSummaries", icon = icon("table")),
 		menuItem("Diagnostic plots", tabName = "diagnostics", icon = icon("stethoscope")),
 		menuItem("Plot apperance", tabName = "plotSettings", icon = icon("pencil-ruler")),
-		menuItem("About", tabName = "about", icon = icon("circle"), selected = TRUE)
+		menuItem("About", tabName = "about", icon = icon("circle"))
 	)
 )
 
