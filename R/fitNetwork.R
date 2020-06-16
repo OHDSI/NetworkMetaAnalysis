@@ -21,8 +21,8 @@ fitNetwork <- function(networkData, includeNodesplittingAnalysis = FALSE, modelT
 	
 	# captue.output silences GeMTC fitting process
 	if (isTRUE(includeNodesplittingAnalysis)) {
-		fitArgs$comparisons <- gemtc::mtc.nodesplit.comparisons(createGemtcNetwork(networkData)) %>%
-			dplyr::sample_n(min(nrow(.), 2)) # keep runtime down during devel
+		# fitArgs$comparisons <- gemtc::mtc.nodesplit.comparisons(createGemtcNetwork(networkData)) %>%
+		# 	dplyr::sample_n(min(nrow(.), 2)) # keep runtime down during devel
 		utils::capture.output(fit <- do.call(gemtc::mtc.nodesplit, c(modelArgs, fitArgs)))
 	} else {
 		fitArgs$model <- do.call(gemtc::mtc.model, c(modelArgs, type = "consistency"))
