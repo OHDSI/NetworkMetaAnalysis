@@ -15,7 +15,7 @@ fetchTidyNodesplitResults <- function(fit) {
 	#      summary.mtc.nodesplit. Using ::: isn't sustainable
 	
 	if (class(fit) != "mtc.nodesplit") {
-		stop("The supplied fit must be the result of running a node-splitting analysis. If you didn't call this function, please contact the package maintainer.", 
+		stop("The supplied fit must be the result of running a node-splitting analysis. Please contact the package maintainer if you didn't call this function.", 
 			 call. = FALSE)
 	}
 	
