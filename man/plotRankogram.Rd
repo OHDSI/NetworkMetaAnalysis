@@ -2,7 +2,7 @@
 % Please edit documentation in R/plotRankogram.R
 \name{plotRankogram}
 \alias{plotRankogram}
-\title{Rank treatments by effictiveness}
+\title{Rank treatments by effectiveness}
 \usage{
 plotRankogram(rankProbabilities, lineSize = 1, lineAlpha = 0.9)
 }
@@ -11,7 +11,7 @@ plotRankogram(rankProbabilities, lineSize = 1, lineAlpha = 0.9)
 
 \item{lineSize}{scalar, thickness of the plot lines.}
 
-\item{lineAlpha}{the opacity of drawn lines. If \code{alpha = 1}, lines will be entirely opague
+\item{lineAlpha}{the opacity of drawn lines. If \code{alpha = 1}, lines will be entirely opaque
 masking overlain lines, so the default is \code{0.7}.}
 }
 \value{

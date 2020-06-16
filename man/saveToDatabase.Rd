@@ -4,17 +4,12 @@
 \alias{saveToDatabase}
 \title{Saves the reconciled results to database}
 \usage{
-saveToDatabase(
-  conn,
-  reconciledResults,
-  schema,
-  overwriteExistingTables = FALSE
-)
+saveToDatabase(results, conn, schema, overwriteExistingTables = FALSE)
 }
 \arguments{
-\item{conn}{connection object.}
+\item{results}{output of \code{runAnalyses}.}
 
-\item{reconciledResults}{output of \code{reconcileResults}.}
+\item{conn}{connection object.}
 
 \item{schema}{string, the name of the schema where the tables will live. Should probably be a
 dedicated schema to prevent conflicting names.}

@@ -22,7 +22,7 @@ plotPosteriorDensities(
 default) or as one (\code{FALSE})? Not plotting chains separately somewhat defeats the purpose
 of the visualisation but is anyway left to the user.}
 
-\item{lineAlpha}{the opacity of drawn lines. If \code{alpha = 1}, lines will be entirely opague
+\item{lineAlpha}{the opacity of drawn lines. If \code{alpha = 1}, lines will be entirely opaque
 masking overlain lines, so the default is \code{0.7}.}
 
 \item{lineSize}{scalar, thickness of the plot lines.}

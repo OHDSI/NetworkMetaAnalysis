@@ -1,4 +1,4 @@
-#' Rank treatments by effictiveness
+#' Rank treatments by effectiveness
 #' 
 #' @param rankProbabilities output of \code{computeRankProbabilities}
 #' @inherit plotTraces

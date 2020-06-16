@@ -30,7 +30,7 @@ coordinate scales (= [-1, [1). Default = 0.1.}
 text.}
 
 \item{edgeAlpha}{scalar in [0, 1] giving the opacity of the edges (default: 0.2). 1 = complete
-opague, 0 = completely transparent.}
+opaque, 0 = completely transparent.}
 
 \item{treatmentMetaData}{NOT IN USE a \code{dataframe} with information about each node in the
 network, e.g., name and databases with data for this treatment.}

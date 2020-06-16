@@ -10,7 +10,7 @@
 #' @param separateChains boolean, should chains be plotted as separate distributions (\code{TRUE},
 #'   default) or as one (\code{FALSE})? Not plotting chains separately somewhat defeats the purpose
 #'   of the visualisation but is anyway left to the user.
-#' @param lineAlpha the opacity of drawn lines. If \code{alpha = 1}, lines will be entirely opague
+#' @param lineAlpha the opacity of drawn lines. If \code{alpha = 1}, lines will be entirely opaque
 #'   masking overlain lines, so the default is \code{0.7}.
 #' @param lineSize scalar, thickness of the plot lines.
 #' @param wrapByModelName boolean, if the \code{modelName} column contains more than one distinct

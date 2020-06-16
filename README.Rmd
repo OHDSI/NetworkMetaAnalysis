@@ -28,13 +28,13 @@ A package for using a collection of target-comparator-outcome estimates from OHD
 - Interactive Shiny app for simple exploration of results and model diagnostics
 - Supports parallel processing
 - Bayesian parameter estimation: allows for generating and comparing derived quantities from posterior samples
-- Supports checking network consistency with node-splitting analysis (compare overall network estimates with diret and indirect estimates)
+- Supports checking network consistency with node-splitting analysis (compare overall network estimates with direct and indirect estimates)
 
 ## Screenshots
 
 #### Pair-wise HRs
 
-Example of heatmap with hazard ratios (HRs) between all six exposures in a demo analysis, with SUCRA values in the diagonal. HRs > 1 favour exposures on the horisontal axis, HRs < 1 those on the vertial axis. SUCRA stands for surface under the cumulative ranking and is the probability that the exposure is most effective.
+Example of heatmap with hazard ratios (HRs) between all six exposures in a demo analysis, with SUCRA values in the diagonal. HRs > 1 favour exposures on the horizontal axis, HRs < 1 those on the vertical axis. SUCRA stands for surface under the cumulative ranking and is the probability that the exposure is most effective.
 
 ![](extras/heatmapPairwiseEstimates.png)
 ```{r, echo=FALSE}
@@ -63,7 +63,7 @@ devtools::install_github("OHDSI/NetworkMetaAnalysis")
 
 ## Example
 
-A fully-fletched network meta-analysis can be run with a few lines of code. Here, we use pseudo-settings for a local PosgreSQL database with a sample of the LEGEND study in a decicated schema. 
+A fully-fledged network meta-analysis can be run with a few lines of code. Here, we use pseudo-settings for a local PosgreSQL database with a sample of the LEGEND study in a dedicated schema. 
 
 ```{r}
 library(NetworkMetaAnalysis)
@@ -105,7 +105,7 @@ If you would like to contribute to this package, please head over to [the HADES 
 
 ## License
 
-NetworkMetaAnalysis ic licensed under Apache License 2.0.
+NetworkMetaAnalysis is licensed under Apache License 2.0.
 
 ## Development and status
 

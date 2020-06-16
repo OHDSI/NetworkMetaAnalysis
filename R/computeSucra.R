@@ -1,7 +1,7 @@
 #' Compute SUCRA estimates
 #'
 #' Computes surface under the cumulative ranking curve (SUCRA) for each treatment in the network.
-#' The ranking curve and rankogram are synonyms. DISLCAIMER: Not sure this deserves its own
+#' The ranking curve and rankogram are synonyms. Not sure this deserves its own
 #' function. Let's see down the road.
 #'
 #' @param rankProbabilities output of \code{computeRankProbabilities}
