@@ -10,7 +10,7 @@
 
 launchShinyApp <- function(results, rstudio = TRUE, ...) {
 	if (class(results) != "ReconciledOhdsiNetworkMetaAnalysis") {
-		stop("results must be the output of either reconcileResults() or loadFromDb().", call. = FALSE)
+		stop("results must be the output of either runAnalyses() or loadFromDb().", call. = FALSE)
 	}
 	
 	if (isTRUE(rstudio)) {
