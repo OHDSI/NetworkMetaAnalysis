@@ -72,8 +72,8 @@ saveToDatabase(results, conn, resultsCdm = "legend_nma", overwriteExistingTables
 resultsFromDb <- loadFromDb(conn, resultsCdm = "legend_nma")
 
 # Save to and load from file
-saveRDS(results, file = "results_with_nodesplitting.Rdata")
-resultsFromFile <- readRDS("results_with_nodesplitting.Rdata")
+saveRDS(results, file = "results_without_nodesplitting.Rdata")
+resultsFromFile <- readRDS("results_without_nodesplitting.Rdata")
 ```
 
 Support
