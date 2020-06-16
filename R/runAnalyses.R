@@ -41,11 +41,14 @@ runAnalyses <- function(aggregatedResults, includeNodesplittingAnalysis = FALSE,
 	
 	# Invoke appropriate function
 	if (nCores > 1) {
-		do.call(runParallelAnalyses, args)
+		res <- do.call(runParallelAnalyses, args)
 	} else {
 		args$nCores <- NULL # not used in sequential case
-		do.call(runSequentialAnalyses, args)
+		res <- do.call(runSequentialAnalyses, args)
 	}
+	
+	# Return reconciled results (= divided by table instead of by analysis)
+	return(reconcileResults(res))
 }
 
 # ===

@@ -7,7 +7,7 @@
 #'   some space, so there might be use cases in which one doesn't want to keep them. They are
 #'   useful, however, for sampling diagnostics so are kept by default.
 #'
-#' @export
+#' @noRd
 
 reconcileResults <- function(networkMetaAnalysisResults, discardPosteriorDraws = FALSE) {
 	# FIX: networkMetaAnalysisId should really go directly in as the first column directly
