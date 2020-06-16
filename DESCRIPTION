@@ -5,7 +5,9 @@ Authors@R:
     person(given = "Benjamin Skov", family = "Kaas-Hansen", role = c("aut", "cre"),
            email = "benskov@gmail.com", comment = c(ORCID = "0000-0003-1023-0371", 
            github = "github.com/benskov"))
-Description: What the package does (one paragraph).
+Description: A package for using a collection of target-comparator-outcome estimates from OHDSI network 
+ 	studies to estimate relative effectiveness between all target-comparator pairs, even in the absence 
+ 	of head-to-head comparison.
 Depends:
 	R (>= 3.5.0)
 Imports:
