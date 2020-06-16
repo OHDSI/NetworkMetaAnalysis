@@ -3,3 +3,6 @@
 generateSysdataFile.R
 internal/
 ^README\.Rmd$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
