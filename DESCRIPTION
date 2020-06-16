@@ -1,6 +1,6 @@
 Package: NetworkMetaAnalysis
 Title: Network meta analysis of target-comparator-outcomes in OHDSI network studies
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     person(given = "Benjamin Skov", family = "Kaas-Hansen", role = c("aut", "cre"),
            email = "benskov@gmail.com", comment = c(ORCID = "0000-0003-1023-0371", 
