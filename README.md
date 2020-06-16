@@ -1,13 +1,94 @@
-# NetworkMetaAnalysis
-[in development] A package to take a collection of target-comparator-outcome estimates and produce indirect network meta-analytics estimates across all target-comparator-outcomes
 
-# The data and logic
-We produce a bunch of data from the network models than can be stored in a database, and later use to produce plots:
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+NetworkMetaAnalysis
+===================
 
-| TCO subset | Network diagram |
-| Relative effect estimates | Forest plot |
-| Rank probabilities | Rankogram, SUCRA estimates (although not a plot) |
-| Posterior parameter draws | |
-|    Rhat | Rhat plot |
-|    Thinned draws | Trace plots |
-|    Density estimates | Density plots |
+<!-- badges: start -->
+[![Build Status](https://travis-ci.org/OHDSI/NetworkMetaAnalysis.svg?branch=master)](https://travis-ci.org/OHDSI/NetworkMetaAnalysis) <!-- badges: end -->
+
+A package for using a collection of target-comparator-outcome estimates from OHDSI network studies to estimate relative effectiveness between all target-comparator pairs, even in the absence of head-to-head comparison.
+
+Features
+--------
+
+-   Simple interface for network meta-analyses crafted for OHDSI network studies
+-   Interactive Shiny app for simple exploration of results and model diagnostics
+-   Supports parallel processing
+-   Bayesian parameter estimation: allows for generating and comparing derived quantities from posterior samples
+
+Screenshots
+-----------
+
+Example of heatmap with hazard ratios (HRs) between all six exposures in a demo analysis, with SUCRA values in the diagonal. HRs &gt; 1 favour exposures on the horisontal axis, HRs &lt; 1 those on the vertial axis. SUCRA stands for surface under the cumulative ranking and is the probability that the exposure is most effective.
+
+![](extras/heatmapPairwiseEstimates.png)
+
+Installation
+------------
+
+Install the package directly from GitHub using `devtools` (if you don't have, just install that first):
+
+``` r
+# install.packages("devtools")
+devtools::install_github("OHDSI/NetworkMetaAnalysis")
+```
+
+Example
+-------
+
+A fully-fletched network meta-analysis can be run with a few lines of code. Here, we use pseudo-settings for a local PosgreSQL database with a sample of the LEGEND study in a decicated schema.
+
+``` r
+library(NetworkMetaAnalysis)
+library(DatabaseConnector)
+
+cd <- createConnectionDetails(dbms = "postgresql", user = "user", password = "password", 
+                              connectionString = "jdbc:postgresql://localhost:1234/db_name")
+conn <- connect(cd)
+
+legendSample <- fetchTcoEstimates(conn, resultsCdm = "legend_nma", resultsTable = "legend_sample")
+
+results <- runAnalyses(legendSample, nCores = 4) # uses foreach to run in parallel if nCores > 1
+
+launchShinyApp(results)
+```
+
+#### Saving and loading results
+
+Fitting several network meta-analysis can be quite time-consuming, so once done the user would likely save the results. The results are essentially a list with a specific structure, so the user can save to a file with R's built-in `saveRDS` function, but NetworkMetaAnalysis features two functions to save the results to and load them from a database.
+
+``` r
+# Save to and load from database
+saveToDatabase(results, conn, resultsCdm = "legend_nma", overwriteExistingTables = TRUE)
+resultsFromDb <- loadFromDb(conn, resultsCdm = "legend_nma")
+
+# Save to and load from file
+saveRDS(results, file = "results_with_nodesplittingy.Rdata")
+resultsFromFile <- readRDS("results_with_nodesplittingy.Rdata")
+```
+
+Support
+-------
+
+-   Developer questions/comments/feedback: [OHDSI Forum](http://forums.ohdsi.org/c/developers)
+-   We use the [GitHub issue tracker](https://www.github.com/OHDSI/NetworkMetaAnalysis/issues) for all bugs/issues/enhancements
+
+Contributing
+------------
+
+If you would like to contribute to this package, please head over to [the HADES page](https://ohdsi.github.io/Hades/contribute.html) to see how.
+
+License
+-------
+
+NetworkMetaAnalysis ic licensed under Apache License 2.0.
+
+Development and status
+----------------------
+
+NetworkMetaAnalysis is developed in RStudio. NetworkMetaAnalysis is maturing under active development.
+
+Acknowledgements
+----------------
+
+-   The package maintainer received funding from Innovation Fund Denmark (5153-00002B) and the Novo Nordisk Foundation (NNF14CC0001).
