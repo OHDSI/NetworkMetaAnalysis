@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">NetworkMetaAnalysis</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -116,7 +116,106 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
+          <h2 id="section-data-in-out" class="hasAnchor"><a href="#section-data-in-out" class="anchor"></a>Data in/out</h2>
+          <p class="section-desc"><p>Functions to load results from the database and save/load results</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="fetchTcoEstimates.html">fetchTcoEstimates()</a></code> </p>
+        </td>
+        <td><p>Load target-comparator-outcome estimates from server</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="saveToDatabase.html">saveToDatabase()</a></code> </p>
+        </td>
+        <td><p>Saves the reconciled results to database</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="loadFromDatabase.html">loadFromDatabase()</a></code> </p>
+        </td>
+        <td><p>Loads results stored in a database following its data model</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-run-analysis" class="hasAnchor"><a href="#section-run-analysis" class="anchor"></a>Run analysis</h2>
+          <p class="section-desc"><p>Simply just run the analysis</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="runAnalyses.html">runAnalyses()</a></code> </p>
+        </td>
+        <td><p>Runs the analysis and returns results ready to be stored in database or used directly</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-visualisation-of-results" class="hasAnchor"><a href="#section-visualisation-of-results" class="anchor"></a>Visualisation of results</h2>
+          <p class="section-desc"><p>Functions that visualise the results in various ways. Diagnostic plots below.</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="launchShinyApp.html">launchShinyApp()</a></code> </p>
+        </td>
+        <td><p>Launch a Shiny app to explore the results</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plotNetwork.html">plotNetwork()</a></code> </p>
+        </td>
+        <td><p>Visualise network</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plotForest.html">plotForest()</a></code> </p>
+        </td>
+        <td><p>Draw forest plot of total network estimates</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plotPairwiseEstimates.html">plotPairwiseEstimates()</a></code> </p>
+        </td>
+        <td><p>Creates a heatmap plot of all pairwise estimates</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plotRankogram.html">plotRankogram()</a></code> </p>
+        </td>
+        <td><p>Rank treatments by effectiveness</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plotNodesplitResults.html">plotNodesplitResults()</a></code> </p>
+        </td>
+        <td><p>Visualise results of node-splitting analysis</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-compute-or-derive-numerical-summaries" class="hasAnchor"><a href="#section-compute-or-derive-numerical-summaries" class="anchor"></a>Compute or derive numerical summaries</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
@@ -152,18 +251,6 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="deriveEdges.html">deriveEdges()</a></code> </p>
-        </td>
-        <td><p>Use to prepare data needed to draw the edges of the network</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="deriveNodes.html">deriveNodes()</a></code> </p>
-        </td>
-        <td><p>Deriving node data for drawing the network</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="fetchParameterSummaries.html">fetchParameterSummaries()</a></code> </p>
         </td>
         <td><p>Table of parameter estimates and deviance statistics for reconciled results</p></td>
@@ -176,70 +263,23 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="fetchTcoEstimates.html">fetchTcoEstimates()</a></code> </p>
-        </td>
-        <td><p>Load target-comparator-outcome estimates from server</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="fetchTidyNodesplitResults.html">fetchTidyNodesplitResults()</a></code> </p>
         </td>
         <td><p>Get the node-splitting analyses results in tidy format</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fitNetwork.html">fitNetwork()</a></code> </p>
-        </td>
-        <td><p>Run model on network to estimate parameters</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="launchShinyApp.html">launchShinyApp()</a></code> </p>
-        </td>
-        <td><p>Launch a Shiny app to explore the results</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="loadFromDb.html">loadFromDb()</a></code> </p>
-        </td>
-        <td><p>Loads results stored in a database following its data model</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plotForest.html">plotForest()</a></code> </p>
-        </td>
-        <td><p>Draw forest plot of total network estimates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plotNetwork.html">plotNetwork()</a></code> </p>
-        </td>
-        <td><p>Visualise network</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plotNodesplitResults.html">plotNodesplitResults()</a></code> </p>
-        </td>
-        <td><p>Visualise results of node-splitting analysis</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plotPairwiseEstimates.html">plotPairwiseEstimates()</a></code> </p>
-        </td>
-        <td><p>Creates a heatmap plot of all pairwise estimates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plotPosteriorDensities.html">plotPosteriorDensities()</a></code> </p>
-        </td>
-        <td><p>Produces density plots of parameter estimates from the fitted models</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plotRankogram.html">plotRankogram()</a></code> </p>
-        </td>
-        <td><p>Rank treatments by effectiveness</p></td>
-      </tr><tr>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-diagnostic-plots-bayesian-estimation-" class="hasAnchor"><a href="#section-diagnostic-plots-bayesian-estimation-" class="anchor"></a>Diagnostic plots (Bayesian estimation)</h2>
+          <p class="section-desc"><p>You should verify that the chains mix, yield similar posterior distributions and yield Rhat values &lt; 1.05 (some are happy with &lt; 1.1).</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
         
         <td>
           <p><code><a href="plotRhat.html">plotRhat()</a></code> </p>
@@ -254,15 +294,9 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="runAnalyses.html">runAnalyses()</a></code> </p>
+          <p><code><a href="plotPosteriorDensities.html">plotPosteriorDensities()</a></code> </p>
         </td>
-        <td><p>Runs the analysis and returns results ready to be stored in database or used directly</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="saveToDatabase.html">saveToDatabase()</a></code> </p>
-        </td>
-        <td><p>Saves the reconciled results to database</p></td>
+        <td><p>Produces density plots of parameter estimates from the fitted models</p></td>
       </tr>
     </tbody>
     </table>

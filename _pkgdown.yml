@@ -1,0 +1,36 @@
+reference:
+- title: "Data in/out"
+  desc: "Functions to load results from the database and save/load results"
+- contents:
+  - fetchTcoEstimates
+  - saveToDatabase
+  - loadFromDatabase
+- title: "Run analysis"
+  desc: "Simply just run the analysis"
+- contents:
+  - runAnalyses
+- title: "Visualisation of results"
+  desc: "Functions that visualise the results in various ways. Diagnostic plots below."
+- contents:
+  - launchShinyApp
+  - plotNetwork
+  - plotForest
+  - plotPairwiseEstimates
+  - plotRankogram
+  - plotNodesplitResults # not in use
+- title: "Compute or derive numerical summaries"
+  desc: ""
+- contents:
+  - computePairwiseEstimates
+  - computeRankProbabilities
+  - computeRhat
+  - computeSucra
+  - fetchParameterSummaries
+  - fetchPosteriorDraws
+  - fetchTidyNodesplitResults
+- title: "Diagnostic plots (Bayesian estimation)"
+  desc: "You should verify that the chains mix, yield similar posterior distributions and yield Rhat values < 1.05 (some are happy with < 1.1)."
+- contents:
+  - plotRhat
+  - plotTraces
+  - plotPosteriorDensities

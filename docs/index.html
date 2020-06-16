@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">NetworkMetaAnalysis</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -123,7 +123,7 @@
 <p>Fitting several network meta-analysis can be quite time-consuming, so once done the user would likely save the results. The results are essentially a list with a specific structure, so the user can save to a file with R’s built-in <code>saveRDS</code> function, but NetworkMetaAnalysis features two functions to save the results to and load them from a database.</p>
 <div class="sourceCode"><pre class="r"><span class="co"># Save to and load from database</span>
 <span class="fu"><a href="reference/saveToDatabase.html">saveToDatabase</a></span>(<span class="no">results</span>, <span class="no">conn</span>, <span class="kw">resultsCdm</span> <span class="kw">=</span> <span class="st">"legend_nma"</span>, <span class="kw">overwriteExistingTables</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
-<span class="no">resultsFromDb</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/loadFromDb.html">loadFromDb</a></span>(<span class="no">conn</span>, <span class="kw">resultsCdm</span> <span class="kw">=</span> <span class="st">"legend_nma"</span>)
+<span class="no">resultsFromDatabase</span> <span class="kw">&lt;-</span> <span class="fu">loadFromDb</span>(<span class="no">conn</span>, <span class="kw">resultsCdm</span> <span class="kw">=</span> <span class="st">"legend_nma"</span>)
 
 <span class="co"># Save to and load from file</span>
 <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">saveRDS</a></span>(<span class="no">results</span>, <span class="kw">file</span> <span class="kw">=</span> <span class="st">"results_without_nodesplitting.Rdata"</span>)

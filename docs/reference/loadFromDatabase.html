@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Compute the Rhat statistic for a given fit — computeRhat • NetworkMetaAnalysis</title>
+<title>Loads results stored in a database following its data model — loadFromDatabase • NetworkMetaAnalysis</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,8 @@
 
 
 
-<meta property="og:title" content="Compute the Rhat statistic for a given fit — computeRhat" />
-<meta property="og:description" content="Returns a tidy tibble with the Rhat statistic for each parameter. Also handles node-splitting
-models." />
+<meta property="og:title" content="Loads results stored in a database following its data model — loadFromDatabase" />
+<meta property="og:description" content="Loads results stored in a database following its data model" />
 
 
 
@@ -104,31 +103,30 @@ models." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Compute the Rhat statistic for a given fit</h1>
+    <h1>Loads results stored in a database following its data model</h1>
     
-    <div class="hidden name"><code>computeRhat.Rd</code></div>
+    <div class="hidden name"><code>loadFromDatabase.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Returns a tidy tibble with the Rhat statistic for each parameter. Also handles node-splitting
-models.</p>
+    <p>Loads results stored in a database following its data model</p>
     </div>
 
-    <pre class="usage"><span class='fu'>computeRhat</span>(<span class='no'>fit</span>)</pre>
+    <pre class="usage"><span class='fu'>loadFromDatabase</span>(<span class='no'>conn</span>, <span class='no'>schema</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>fit</th>
-      <td><p>an object of class <code>"mtc.result"</code> or <code>"mtc.nodesplit"</code>.</p></td>
+      <th>conn</th>
+      <td><p>connection to database, e.g. result of calling <code><a href='https://rdrr.io/pkg/DatabaseConnector/man/connect.html'>DatabaseConnector::connect</a></code></p></td>
+    </tr>
+    <tr>
+      <th>schema</th>
+      <td><p>string, the name of the schema where results tables live.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Tidy tibble. If a node-splitting result is supplied, the first columns called
-<code>modelName</code> indicates the comparison that was split in the analysis.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
