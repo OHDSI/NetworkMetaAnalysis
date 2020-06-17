@@ -87,7 +87,7 @@ Fitting several network meta-analysis can be quite time-consuming, so once done 
 ```{r}
 # Save to and load from database
 saveToDatabase(results, conn, resultsCdm = "legend_nma", overwriteExistingTables = TRUE)
-resultsFromDatabase <- loadFromDb(conn, resultsCdm = "legend_nma")
+resultsFromDatabase <- loadFromDatabase(conn, resultsCdm = "legend_nma")
 
 # Save to and load from file
 saveRDS(results, file = "results_without_nodesplitting.Rdata")
