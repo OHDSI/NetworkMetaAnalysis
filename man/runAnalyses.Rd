@@ -47,7 +47,7 @@ values are preferred, \code{-1} means lower values are preferred.}
 \item{modelType}{string defining whether to run a random-effects (\code{"random"}, default) or a
 fixed-effects (\code{"fixed"}) mode.}
 
-\item{drawsThin, }{scalar, thinning factor used when fetching posterior draws to keep in the
+\item{drawsThin}{scalar, thinning factor used when fetching posterior draws to keep in the
 database. Used to produce further derived quantities, density plots of posterior distributions
 and trace plots.}
 
