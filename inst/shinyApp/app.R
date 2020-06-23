@@ -480,8 +480,6 @@ server <- function(input, output) {
 	
 	# > Plot appearance ----
 	output$plotSettingsExamplePlot <- renderPlot({
-		# FIX: Consider allowing relative text size differences between titles and text (e.g. axes)
-		
 		ggplot2::update_geom_defaults("text", list(size = input$plotTextSize / ggplot2::.pt))
 		x <- 0:10 / 10
 		dta <- data.frame(x = c(x, x), 
