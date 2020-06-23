@@ -10,8 +10,6 @@
 #' @noRd
 
 reconcileResults <- function(networkMetaAnalysisResults, discardPosteriorDraws = FALSE) {
-	# FIX: networkMetaAnalysisId should really go directly in as the first column directly
-	
 	# Output container: list of lists (one for each table to reconcile)
 	o <- unique(unlist(lapply(networkMetaAnalysisResults, names))) %>%
 		sapply(function(.) list(), simplify = FALSE)
@@ -22,8 +20,7 @@ reconcileResults <- function(networkMetaAnalysisResults, discardPosteriorDraws =
 		for (t in names(o)) {
 			# Shouldn't be necessary check, as all analyses should have the same tables, but just in case
 			if (!is.null(nma[[t]])) {
-				o[[t]][[nmaId]] <- dplyr::mutate(nma[[t]], networkMetaAnalysisId = nmaId) %>%
-					dplyr::select(networkMetaAnalysisId, dplyr::everything()) 
+				o[[t]][[nmaId]] <- dplyr::bind_cols(networkMetaAnalysisId = nmaId, nma[[t]])
 			} else {
 				o[[t]][[nmaId]] <- NULL
 			}
