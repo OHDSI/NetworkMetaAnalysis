@@ -13,7 +13,7 @@
 #'   \code{10} would keep only every tenth sample.
 #' @param modelType string defining whether to run a random-effects (\code{"random"}, default) or a
 #'   fixed-effects (\code{"fixed"}) mode.
-#' @param drawsThin, scalar, thinning factor used when fetching posterior draws to keep in the
+#' @param drawsThin scalar, thinning factor used when fetching posterior draws to keep in the
 #'   database. Used to produce further derived quantities, density plots of posterior distributions
 #'   and trace plots.
 #' @param referenceTreatmentId string, the name of the exposure to use as the reference when
