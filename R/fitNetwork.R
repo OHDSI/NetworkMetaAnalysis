@@ -13,8 +13,6 @@
 fitNetwork <- function(networkData, includeNodesplittingAnalysis = FALSE, modelType = "random",
 					   nWarmup = 1000, nIter = 3000, fitThin = 1, nChains = 4) {
 	
-	# FIX: Remove the sampling of comparisons to do in node-splitting analysis
-	
 	modelArgs <- list(network = createGemtcNetwork(networkData), likelihood = "poisson", link = "log", 
 					  linearModel = modelType, dic = TRUE, n.chain = nChains)
 	fitArgs <- list(n.adapt = nWarmup, n.iter = nIter, thin = fitThin)
