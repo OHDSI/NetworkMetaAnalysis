@@ -33,7 +33,7 @@ plotNetwork <- function(edges, nodes, maxNodeRadius = 0.1, nodeColour = "dodgerb
 	
 	# FIX: maxNodeRadius based on number of nodes
 	# FIX: Expansion of plot area must be handled better
-	# FIX: Use labelOrientation argument (for now, only radial uses)
+	# FIX: Use labelOrientation argument (for now, only radial used)
 	
 	igraph::graph_from_data_frame(edges, directed = FALSE, vertices = nodes) %>%
 		ggraph::ggraph(layout = "linear", circular = TRUE, sort.by = name) +
