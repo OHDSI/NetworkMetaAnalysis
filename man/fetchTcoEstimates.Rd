@@ -24,6 +24,6 @@ ignored. The default (\code{"Meta-analysis"}) is obvious and should be kept if o
 are added.}
 }
 \description{
-Load TCO estimates from the server and wrangle them into a format appropriate for network
-visualisation and analysis.
+Load TCO estimates from the server. They need some processing (\code{wrangleTcoEstimates}) before
+they are ready.
 }
