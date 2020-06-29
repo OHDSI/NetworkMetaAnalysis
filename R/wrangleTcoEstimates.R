@@ -4,11 +4,15 @@
 #' rest of the workflow in the package. This function does just that.
 #'
 #' @param tcoEstimates data frame/tibble, in the original LEGEND format.
+#' @param excludedDatabases character vector, names of the databases whose results should be
+#'   ignored. The default (\code{"Meta-analysis"}) is obvious and should be kept if other databases
+#'   are added.
 #' 
 #' @export
 
-wrangleTcoEstimates <- function(tcoEstimates) {
+wrangleTcoEstimates <- function(tcoEstimates, excludedDatabases = "Meta-analysis") {
 	dplyr::rename_all(tcoEstimates, SqlRender::snakeCaseToCamelCase) %>%
+		dplyr::filter(!databaseId %in% excludedDatabases) %>%
 		dplyr::transmute(analysisId, 
 						 databaseId, 
 						 outcomeId,

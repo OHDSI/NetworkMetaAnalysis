@@ -4,10 +4,14 @@
 \alias{wrangleTcoEstimates}
 \title{Putting original data into appropriate format}
 \usage{
-wrangleTcoEstimates(tcoEstimates)
+wrangleTcoEstimates(tcoEstimates, excludedDatabases = "Meta-analysis")
 }
 \arguments{
 \item{tcoEstimates}{data frame/tibble, in the original LEGEND format.}
+
+\item{excludedDatabases}{character vector, names of the databases whose results should be
+ignored. The default (\code{"Meta-analysis"}) is obvious and should be kept if other databases
+are added.}
 }
 \description{
 Whether data were loaded from a database o a file, they need some wrangling to play well with the
