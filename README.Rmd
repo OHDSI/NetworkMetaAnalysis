@@ -68,12 +68,14 @@ A fully-fledged network meta-analysis can be run with a few lines of code. Here,
 ```{r}
 library(NetworkMetaAnalysis)
 library(DatabaseConnector)
+library(dplyr)
 
 cd <- createConnectionDetails(dbms = "postgresql", user = "user", password = "password", 
 							  connectionString = "jdbc:postgresql://localhost:1234/db_name")
 conn <- connect(cd)
 
-legendSample <- fetchTcoEstimates(conn, resultsCdm = "legend_nma", resultsTable = "legend_sample")
+legendSampleRaw <- fetchTcoEstimates(conn, resultsCdm = "legend_nma", resultsTable = "legend_sample")
+legendSample <- wrangleTcoEstimates(legendSampleRaw)
 
 results <- runAnalyses(legendSample, nCores = 4) # uses foreach to run in parallel if nCores > 1
 
