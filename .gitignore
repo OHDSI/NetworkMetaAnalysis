@@ -4,6 +4,7 @@
 .RData
 .Ruserdata
 .DS_Store
+errorReportSql.txt
 internal/
 **/.DS_Store
 errorReport.txt
