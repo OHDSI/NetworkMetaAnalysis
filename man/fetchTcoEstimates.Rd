@@ -4,12 +4,7 @@
 \alias{fetchTcoEstimates}
 \title{Load target-comparator-outcome estimates from server}
 \usage{
-fetchTcoEstimates(
-  conn,
-  resultsCdm,
-  resultsTable,
-  excludedDatabases = "Meta-analysis"
-)
+fetchTcoEstimates(conn, resultsCdm, resultsTable)
 }
 \arguments{
 \item{conn}{a connection to a database, e.g., the result of calling
@@ -18,12 +13,8 @@ fetchTcoEstimates(
 \item{resultsCdm}{string, the name of the schema in which the table lives.}
 
 \item{resultsTable}{string, the name of the table holding the estimates.}
-
-\item{excludedDatabases}{character vector, names of the databases whose results should be
-ignored. The default (\code{"Meta-analysis"}) is obvious and should be kept if other databases
-are added.}
 }
 \description{
-Load TCO estimates from the server and wrangle them into a format appropriate for network
-visualisation and analysis.
+Load TCO estimates from the server. They need some processing (\code{wrangleTcoEstimates}) before
+they are ready.
 }

@@ -7,24 +7,27 @@
 plotNetwork(
   edges,
   nodes,
-  maxNodeRadius = 0.1,
   nodeColour = "dodgerblue",
   labelOrientation = "radial",
   labelColour = "black",
+  labelSize = 10,
   edgeColour = "dodgerblue",
   edgeAlpha = 0.2,
   treatmentMetaData = NULL,
+  maxEdgeSize = 3,
+  maxNodeSize = 10,
+  relExpandX = 1.05,
+  relExpandY = 1.05,
   edgeMetaData = NULL
 )
 }
 \arguments{
 \item{edges, nodes}{data frames with data on edges and nodes in the study graph.}
 
-\item{maxNodeRadius}{the radius of the largest node in the network on the original
-coordinate scales (= [-1, [1). Default = 0.1.}
-
 \item{labelOrientation}{string giving how to rotate the label. There are two allowed settings:
 \code{"radial"} (default) and \code{"horisontal"}/\code{"horizontal"}.}
+
+\item{labelSize}{scalar, size of the text}
 
 \item{edgeColour, nodeColour, labelColour}{strings given the colours of edges, nodes and label
 text.}
@@ -35,9 +38,21 @@ opaque, 0 = completely transparent.}
 \item{treatmentMetaData}{NOT IN USE a \code{dataframe} with information about each node in the
 network, e.g., name and databases with data for this treatment.}
 
+\item{maxEdgeSize, maxNodeSize}{scalars, the size of the largest node and thickness of widest edge
+in the graph. Set to reasonable defaults but this will likely need adjustment in a number of
+situations.}
+
+\item{relExpandX, relExpandY}{scalars, how much to expand the plot area beyond the node labels.
+Because text in \code{ggplot2} doesn't have a well-defined width, it's tricky to set perfect
+defaults. The default (\code{1.05}) for these work fine, but you might need to tweak them to
+get a perfect publication-ready plot.}
+
 \item{edgeMetaData}{NOT IN USE a \code{dataframe} with information about the head-to-head
 comparisons. Note that the number of head-to-head comparisons is computed so doesn't need to be
 supplied.}
+
+\item{maxNodeRadius}{the radius of the largest node in the network on the original coordinate
+scales (= [-1, [1). Default = 0.1.}
 }
 \description{
 Draw the head-to-head comparisons as a network. The function relies on \pkg{ggraph} to do the

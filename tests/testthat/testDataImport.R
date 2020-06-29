@@ -20,3 +20,5 @@ test_that("must load a valid data frame", {
 	expect_named(fetchTcoEstimates(conn, "ohdsi_network_meta_analysis", "legend_sample"),
 				 c("analysisId", "databaseId", "outcomeId", "studyId", "cohortType", "treatment", "responders", "exposure"))
 })
+
+# Add test of a all.equal(data_db, data_file); remember to arrange by all columns (order in db arbitrary)
