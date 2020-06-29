@@ -10,8 +10,10 @@
 #' 
 #' @noRd
 
-computeAxisLimits <- function(nodeNames, axis, maxNodeRadius, relExpand = 1.05) {
+computeAxisLimits <- function(nodeNames, axis, maxNodeSize, relExpand = 1.05, d = NULL) {
 	# FIX: Project on the y axis, to account for situations without vertical labels
+	# FIX: Correct axes could probably be solved by finding the bounding box of all nodes with their rotations
+	# 	   - either by recreating them here or somehow reuse what's already been built by ggraph
 	
 	longestNodeName <- nodeNames[which.max(nchar(nodeNames))[1]] # index in case of ties
 	convertFun <- switch(axis, "x" = convertX, "y" = convertY)
@@ -19,6 +21,7 @@ computeAxisLimits <- function(nodeNames, axis, maxNodeRadius, relExpand = 1.05) 
 		stop("Can't define convertFun in computeAxisLimits. Please, contact package maintainer.")
 	}
 	
-	c(convertFun(unit(-relExpand - maxNodeRadius, "npc") - unit(1, "strwidth", longestNodeName), "npc"),
-	  convertFun(unit(relExpand + maxNodeRadius, "npc") + unit(1, "strwidth", longestNodeName), "npc"))
+	maxNodeSize <- grid::unit(maxNodeSize, "lines")
+	c(convertFun(unit(-relExpand, "npc") - maxNodeSize - unit(1, "strwidth", longestNodeName), "npc"),
+	  convertFun(unit(relExpand, "npc") + maxNodeSize + unit(1, "strwidth", longestNodeName), "npc"))
 }
