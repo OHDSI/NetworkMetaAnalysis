@@ -42,10 +42,6 @@ plotNetwork <- function(edges, nodes, nodeColour = "dodgerblue",
 						edgeMetaData = NULL) {
 	
 	# FIX: maxNodeRadius based on number of nodes
-<<<<<<< HEAD
-	# FIX: Expansion of plot area must be handled better
-	# FIX: Use labelOrientation argument (for now, only radial used)
-=======
 	# FIX: Expansion of plot area must be handled better -- THAT REQUIRES A NEW GEOM TO textGrob sizes are evaluated within plot area only
 	# FIX: Use labelOrientation argument (for now, only radial uses)
 	# FIX: Don't enforce coord_fixed but use relative height (to width) and use this to adjust angle of labels with orientation = "radial"
@@ -61,7 +57,6 @@ plotNetwork <- function(edges, nodes, nodeColour = "dodgerblue",
 			sapply(function(.) grid::convertX(grid::grobX(., "east") - grid::grobX(., "west"), "native", TRUE)) %>%
 			max() 
 	}
->>>>>>> 51140e70c2d469fb1f0ae9d0f62126cd29a8c30e
 	
 	igraph::graph_from_data_frame(edges, directed = FALSE, vertices = nodes) %>%
 		ggraph::ggraph(layout = "linear", circular = TRUE, sort.by = name) +
